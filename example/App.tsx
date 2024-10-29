@@ -98,6 +98,23 @@ const App = () => {
     );
   };
 
+  const handlePay = async () => {
+    try {
+      const res = await WeChat.pay({
+        partnerId: '2480306091',
+        prepayId: 'wx26161523845794ecced251acf2b6860000',
+        nonceStr: 'vmall_240926161523_993_2774',
+        timeStamp: '1727338524',
+        package: 'Sign=WXPay',
+        sign: 'rAqsrx5yLfRNBGvlHYuLhUsNK0OPeOLQ5xlvhxFo9guPU4HeNtzRdPaGAXAzXvn7V5chVe8sj3BfvDgwXlCKctCcFIllOgheyZbZ7btFC',
+        extData: '',
+      });
+      console.log(res);
+    } catch (error) {
+      console.log('%c  error:', 'color: #0e93e0;background: #aaefe5;', error);
+    }
+  };
+
   return (
     <Tester style={{ flex: 1 }}>
       <ScrollView>
@@ -152,6 +169,11 @@ Click the button to pull up the WeChat chat list and select friends to share rem
             itShould="
 Click the button to select a local picture, then pull up the WeChat chat list and select friends to share the picture">
             <Button title="shareLocalImage" onPress={handleShareLocalImage} />
+          </TestCase>
+        </TestSuite>
+        <TestSuite name="支付">
+          <TestCase itShould="Click the button to launch WeChat payment">
+            <Button title="pay" onPress={handlePay} />
           </TestCase>
         </TestSuite>
         <View style={{ height: 150 }} />
