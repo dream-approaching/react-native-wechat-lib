@@ -8,10 +8,12 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
+//import com.reactnativepagerview.PagerViewPackage;
+//import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import com.facebook.soloader.SoLoader;
 // react-native-wechat-lib support (
-import com.imagepicker.ImagePickerPackage;
-import com.wechatlib.WeChatLibPackage;
+//import com.imagepicker.ImagePickerPackage;
+//import com.wechatlib.WeChatLibPackage;
 // )
 
 import java.util.List;
@@ -31,8 +33,10 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-            packages.add(new WeChatLibPackage());
-            packages.add(new ImagePickerPackage());
+//            packages.add(new WeChatLibPackage());
+//            packages.add(new ImagePickerPackage());
+//            packages.add(new RNGestureHandlerPackage());
+//            packages.add(new PagerViewPackage());
           return packages;
         }
 
