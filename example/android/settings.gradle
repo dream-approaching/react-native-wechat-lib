@@ -9,5 +9,8 @@ includeBuild('../node_modules/@react-native/gradle-plugin')
 //include ':react-native-image-picker'
 //project(':react-native-image-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-picker/android')
 
-include ':react-native-pager-view'
-project(':react-native-pager-view').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-pager-view/android')
+include ':react-native-filament'
+project(':react-native-filament').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-filament/android')
+
+include ':react-native-worklets-core'
+project(':react-native-worklets-core').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-worklets-core/android')

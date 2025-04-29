@@ -102,6 +102,11 @@ android {
         versionName "1.0"
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
     splits {
         abi {
             reset()
@@ -159,7 +164,8 @@ dependencies {
     implementation("com.facebook.react:react-android")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
-    implementation project(':react-native-pager-view')
+    implementation project(':react-native-filament')
+    implementation project(':react-native-worklets-core')
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
