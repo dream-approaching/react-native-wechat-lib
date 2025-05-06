@@ -18,8 +18,8 @@
     "@reduxjs/toolkit": "1.5.1",
     "react": "18.2.0",
     "react-native": "0.72.5",
-    "react-native-filament": "^1.6.1",
-    "react-native-harmony": "npm@react-native-oh/react-native-harmony@^0.72.32"
+    "react-native-harmony": "npm@react-native-oh/react-native-harmony@^0.72.59",
+    "react-native-swiper": "^1.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
