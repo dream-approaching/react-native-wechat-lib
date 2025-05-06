@@ -11,3 +11,5 @@ bundle.harmony.js
 lib/*
 *.tar.gz
 *.tgz
+oh_modules/*
+**/oh_modules/*

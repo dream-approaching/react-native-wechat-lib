@@ -16,7 +16,7 @@
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@react-native-oh-tpl/react-native-image-picker": "^7.0.3-0.1.6",
-    "@react-native-ohos/react-native-wechat-lib": "file:../react-native-ohos-react-native-wechat-lib-3.0.6-rc.3.tgz",
+    "@react-native-ohos/react-native-wechat-lib": "^3.0.6-rc.3",
     "react": "18.2.0",
     "react-native": "0.72.5",
     "react-native-harmony": "npm@react-native-oh/react-native-harmony@^0.72.32"
