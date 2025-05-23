@@ -24,6 +24,7 @@
     "typescript": "4.5.5"
   },
   "dependencies": {
+    "@react-native-oh-tpl/react-native-gesture-handler": "^2.14.17-rc.0",
     "js-sha1": "^0.7.0",
     "react-native-wechat-lib": "3.0.4"
   },
