@@ -25,12 +25,13 @@
 import type {RNPackageContext, RNPackage} from '@rnoh/react-native-openharmony/ts';
 // import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/ts';
 import { GestureHandlerPackage } from '@react-native-oh-tpl/react-native-gesture-handler/ts';
-
+import { ReanimatedPackage } from '@react-native-oh-tpl/react-native-reanimated/ts';
 
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
     // new ViewPagerPackage(ctx)
     new GestureHandlerPackage(ctx),
+    new ReanimatedPackage(ctx),
   ];
 }

@@ -6,7 +6,8 @@
   "version": "1.0.0",
   "dependencies": {
     "@rnoh/react-native-openharmony": "0.72.32",
-    "@react-native-oh-tpl/react-native-gesture-handler": "file:../../node_modules/@react-native-oh-tpl/react-native-gesture-handler/harmony/gesture_handler.har"
+    "@react-native-oh-tpl/react-native-gesture-handler": "file:../../node_modules/@react-native-oh-tpl/react-native-gesture-handler/harmony/gesture_handler.har",
+    "@react-native-oh-tpl/react-native-reanimated": "file:../../node_modules/@react-native-oh-tpl/react-native-reanimated/harmony/reanimated.har"
 
   }
 }

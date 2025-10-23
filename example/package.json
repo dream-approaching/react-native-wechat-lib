@@ -15,11 +15,14 @@
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@react-native-oh-tpl/react-native-gesture-handler": "^2.14.17-rc.0",
+    "@react-native-oh-tpl/bottom-sheet": "^4.6.4-0.0.2",
+    "@react-native-oh-tpl/react-native-gesture-handler": "^2.14.13",
+    "@react-native-oh-tpl/react-native-reanimated": "^3.6.4-rc.1",
     "@reduxjs/toolkit": "1.5.1",
     "react": "18.2.0",
     "react-native": "0.72.5",
-    "react-native-harmony": "npm@react-native-oh/react-native-harmony@^0.72.59",
+    "react-native-harmony": "file:./rnoh_package/rnoh-react-native-harmony-0.72.32.tgz",
+    "react-native-reanimated": "^3.6.0",
     "react-native-swiper": "^1.6.0"
   },
   "devDependencies": {
@@ -29,7 +32,8 @@
     "@react-native-community/eslint-config": "^3.2.0",
     "@react-native/eslint-config": "^0.74.0",
     "@react-native/metro-config": "^0.72.6",
-    "@rnoh/testerino": "npm@react-native-oh-tpc/testerino@0.0.9",
+    "@rnoh/react-native-harmony-cli": "file:./rnoh_package/rnoh-react-native-harmony-cli-0.0.27.tgz",
+    "@rnoh/testerino": "file:./rnoh_package/rnoh-testerino-0.0.9.tgz",
     "@tsconfig/react-native": "^2.0.2",
     "@types/chai": "^4.3.4",
     "@types/d3-scale-chromatic": "^3.0.0",
@@ -57,7 +61,7 @@
     "yargs": "^17.7.2"
   },
   "overrides": {
-    "@rnoh/react-native-harmony-cli": "npm@react-native-oh/react-native-harmony-cli@^0.0.27",
+    "@rnoh/react-native-harmony-cli": "file:./rnoh_package/rnoh-react-native-harmony-cli-0.0.27.tgz",
     "@react-native-community/cli": "11.3.6",
     "@react-native/codegen": "0.74.0"
   },
