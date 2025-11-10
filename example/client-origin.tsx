@@ -1,32 +1,29 @@
 import React, { FC, useRef } from 'react';
-import { Animated, View, StyleSheet, Text } from 'react-native';
+import { Animated, View, StyleSheet, PanResponder, Text } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet from '@gorhom/bottom-sheet';
-import { PanGestureHandler, PanGestureHandlerGestureEvent } from 'react-native-gesture-handler';
 
 export const Adjustorder: FC<any> = (globalProps?: any) => {
   const pan = useRef(new Animated.ValueXY()).current;
 
-  const onGestureEvent = Animated.event<
-    PanGestureHandlerGestureEvent['nativeEvent']
-  >(
-    [
-      {
-        nativeEvent: {
-          translationX: pan.x,
-          translationY: pan.y,
-        },
+  const panResponder = useRef(
+    PanResponder.create({
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderGrant: () => {
+        pan.setOffset({
+          x: pan.x._value,
+          y: pan.y._value,
+        });
       },
-    ],
-    { useNativeDriver: false },
-  );
-
-  const onHandlerStateChange = (event: PanGestureHandlerGestureEvent) => {
-    if ((event as any).nativeEvent.oldState === 4) {
-      pan.extractOffset();
-      pan.setValue({ x: 0, y: 0 });
-    }
-  };
+      onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }]),
+      onPanResponderRelease: () => {
+        pan.flattenOffset();
+      },
+      onPanResponderTerminate: () => {
+        console.log('======');
+      },
+    }),
+  ).current;
 
   return (
     <View style={{ flex: 1 }}>
@@ -37,21 +34,16 @@ export const Adjustorder: FC<any> = (globalProps?: any) => {
           onChange={() => {}}
           topInset={10}
           enableAccessibilityChangeAnnouncement={true}
-          enableContentPanningGesture={false}
-        >
+          enableContentPanningGesture={false}>
           <View style={styles.container}>
             <Text style={styles.titleText}>Drag this box!</Text>
-            <PanGestureHandler
-              onGestureEvent={onGestureEvent}
-              onHandlerStateChange={onHandlerStateChange}
-            >
-              <Animated.View
-                style={{
-                  transform: [{ translateX: pan.x }, { translateY: pan.y }],
-                }}>
-                <View style={styles.box} />
-              </Animated.View>
-            </PanGestureHandler>
+            <Animated.View
+              style={{
+                transform: [{ translateX: pan.x }, { translateY: pan.y }],
+              }}
+              {...panResponder.panHandlers}>
+              <View style={styles.box} />
+            </Animated.View>
           </View>
         </BottomSheet>
       </GestureHandlerRootView>

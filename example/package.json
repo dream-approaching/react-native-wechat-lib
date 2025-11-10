@@ -6,6 +6,7 @@
     "i": "cd ../ && npm i && npm run pack:prod && cd ./example && npm i",
     "reStart": "npm run install:pkg && npm run codegen && hdc rport tcp:8081 tcp:8081 && react-native start",
     "start": "hdc rport tcp:8081 tcp:8081 && react-native start",
+    "startA": "adb reverse tcp:8081 tcp:8081 && react-native start",
     "codegen": "react-native codegen-harmony --rnoh-module-path ./harmony/entry/oh_modules/@rnoh/react-native-openharmony",
     "pack:pkg": "cd ../ && npm run pack:prod && cd ./example",
     "install:pkg": "npm uninstall @react-native-ohos/react-native-wechat-lib && npm run pack:pkg && npm i @react-native-ohos/react-native-wechat-lib@file:../react-native-ohos-react-native-wechat-lib-3.0.6-rc.2.tgz",
@@ -16,12 +17,14 @@
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@react-native-oh-tpl/bottom-sheet": "^4.6.4-0.0.2",
-    "@react-native-oh-tpl/react-native-gesture-handler": "^2.14.13",
+    "@react-native-oh-tpl/react-native-gesture-handler": "2.14.17-rc.0",
+    "@react-native-oh-tpl/react-native-pager-view": "^6.2.3-0.2.8",
     "@react-native-oh-tpl/react-native-reanimated": "^3.6.4-rc.1",
+    "@react-native-oh-tpl/react-native-tab-view": "^3.5.2-0.1.3",
+    "@react-native-oh/react-native-harmony": "0.72.82",
     "@reduxjs/toolkit": "1.5.1",
     "react": "18.2.0",
     "react-native": "0.72.5",
-    "react-native-harmony": "file:./rnoh_package/rnoh-react-native-harmony-0.72.32.tgz",
     "react-native-reanimated": "^3.6.0",
     "react-native-swiper": "^1.6.0"
   },
@@ -32,7 +35,6 @@
     "@react-native-community/eslint-config": "^3.2.0",
     "@react-native/eslint-config": "^0.74.0",
     "@react-native/metro-config": "^0.72.6",
-    "@rnoh/react-native-harmony-cli": "file:./rnoh_package/rnoh-react-native-harmony-cli-0.0.27.tgz",
     "@rnoh/testerino": "file:./rnoh_package/rnoh-testerino-0.0.9.tgz",
     "@tsconfig/react-native": "^2.0.2",
     "@types/chai": "^4.3.4",
@@ -61,7 +63,7 @@
     "yargs": "^17.7.2"
   },
   "overrides": {
-    "@rnoh/react-native-harmony-cli": "file:./rnoh_package/rnoh-react-native-harmony-cli-0.0.27.tgz",
+    "@rnoh/react-native-harmony-cli": "npm:@react-native-oh/react-native-harmony-cli@^0.77.22",
     "@react-native-community/cli": "11.3.6",
     "@react-native/codegen": "0.74.0"
   },

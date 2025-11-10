@@ -3,7 +3,8 @@ import { StyleSheet, View, Animated, PanResponder } from 'react-native';
 import {
   PanGestureHandler,
   GestureHandlerRootView,
-} from '@react-native-oh-tpl/react-native-gesture-handler';
+} from 'react-native-gesture-handler';
+import Animated2 from 'react-native-reanimated';
 
 const App = () => {
   const pan = useRef(new Animated.ValueXY()).current;
@@ -32,15 +33,17 @@ const App = () => {
   // render
   return (
     <GestureHandlerRootView style={styles.container}>
-      <PanGestureHandler>
-        <Animated.View
-          style={{
-            transform: [{ translateX: pan.x }, { translateY: pan.y }],
-          }}
-          {...panResponder.panHandlers}>
-          <View style={styles.box} />
-        </Animated.View>
-      </PanGestureHandler>
+      <Animated2.View>
+        <PanGestureHandler>
+          <Animated.View
+            style={{
+              transform: [{ translateX: pan.x }, { translateY: pan.y }],
+            }}
+            {...panResponder.panHandlers}>
+            <View style={styles.box} />
+          </Animated.View>
+        </PanGestureHandler>
+      </Animated2.View>
     </GestureHandlerRootView>
   );
 };

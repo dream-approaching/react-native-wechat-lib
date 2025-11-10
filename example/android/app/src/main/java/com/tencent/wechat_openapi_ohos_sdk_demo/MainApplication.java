@@ -9,6 +9,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
+import com.reactnativepagerview.PagerViewPackage;
+import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 //import com.reactnativepagerview.PagerViewPackage;
 // react-native-wechat-lib support (
 //import com.imagepicker.ImagePickerPackage;
@@ -35,6 +37,8 @@ public class MainApplication extends Application implements ReactApplication {
 //            packages.add(new WeChatLibPackage());
 //            packages.add(new ImagePickerPackage());
 //            packages.add(new PagerViewPackage());
+            packages.add(new RNGestureHandlerPackage());
+            packages.add(new PagerViewPackage());
           return packages;
         }
 
