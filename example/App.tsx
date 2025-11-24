@@ -1,86 +1,12 @@
 import React, { FC, useRef } from 'react';
-import { Animated, View, StyleSheet, Text } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import BottomSheet from '@gorhom/bottom-sheet';
-import { PanGestureHandler, PanGestureHandlerGestureEvent } from 'react-native-gesture-handler';
+import { View, Text } from 'react-native';
 
-export const Adjustorder: FC<any> = (globalProps?: any) => {
-  const pan = useRef(new Animated.ValueXY()).current;
-
-  const onGestureEvent = Animated.event<
-    PanGestureHandlerGestureEvent['nativeEvent']
-  >(
-    [
-      {
-        nativeEvent: {
-          translationX: pan.x,
-          translationY: pan.y,
-        },
-      },
-    ],
-    { useNativeDriver: false },
-  );
-
-  const onHandlerStateChange = (event: PanGestureHandlerGestureEvent) => {
-    if ((event as any).nativeEvent.oldState === 4) {
-      pan.extractOffset();
-      pan.setValue({ x: 0, y: 0 });
-    }
-  };
-
+export const App: FC<any> = () => {
   return (
     <View style={{ flex: 1 }}>
-      <GestureHandlerRootView style={styles.mapContainer}>
-        <BottomSheet
-          index={1}
-          snapPoints={['25%', '50%', '90%']}
-          onChange={() => {}}
-          topInset={10}
-          enableAccessibilityChangeAnnouncement={true}
-          enableContentPanningGesture={false}
-        >
-          <View style={styles.container}>
-            <Text style={styles.titleText}>Drag this box!</Text>
-            <PanGestureHandler
-              onGestureEvent={onGestureEvent}
-              onHandlerStateChange={onHandlerStateChange}
-            >
-              <Animated.View
-                style={{
-                  transform: [{ translateX: pan.x }, { translateY: pan.y }],
-                }}>
-                <View style={styles.box} />
-              </Animated.View>
-            </PanGestureHandler>
-          </View>
-        </BottomSheet>
-      </GestureHandlerRootView>
+      <Text>123</Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  mapContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#888888',
-  },
-  titleText: {
-    fontSize: 14,
-    lineHeight: 24,
-    fontWeight: 'bold',
-  },
-  box: {
-    height: 150,
-    width: 150,
-    backgroundColor: 'blue',
-    borderRadius: 5,
-  },
-});
-
-export default Adjustorder;
+export default App;
